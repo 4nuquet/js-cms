@@ -4,7 +4,7 @@ import router from './router';
 import store from './store'
 
 /**Styles */
-
+import './assets/css/lux-bootstrap.css'
 
 Vue.config.productionTip = false;
 

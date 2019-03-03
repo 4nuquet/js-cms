@@ -30,6 +30,18 @@ module.exports = {
                 use: [
                     devMode ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader'
                 ]
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                        name: '[path][name].[ext]',
+                        },
+                    },
+                ],
             }
         ]
     },

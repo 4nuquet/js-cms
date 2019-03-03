@@ -1,20 +1,30 @@
 <template>
-    <div class="container">
-        <router-link to="/about">About</router-link>
-        <h1>App Component</h1>
-        <p>{{message}}</p>
-        <Hello/>
-        <router-view/>
+    <div class="container-fluid">
+        <div class="row wrapper">
+            <div class="col-md-2 pr-0">
+                <Sidebar/>
+            </div>
+            <article class="col-md-10 p-0">
+              <Navbar/>
+              <section>
+                  <router-view/>
+              </section>
+            </article>
+        </div>
     </div>
 </template>
 <script>
 
-import Hello from './components/Hello.vue'
+import Navbar from './components/navbar/NavBar.vue'
+import Sidebar from './components/sidebar/SideBar.vue'
+
 
 export default {
     name: 'App',
     components: {
-        Hello
+        Navbar,
+        Sidebar
+        
     },
     data(){
         return{
@@ -23,3 +33,15 @@ export default {
     }
 }
 </script>
+<style scope>
+body, html, .container-fluid {
+    height: 100% !important;
+    padding: 0px !important;
+}
+
+.wrapper {
+    min-height: 100vh;
+    max-height: 100%;
+}
+
+</style>
